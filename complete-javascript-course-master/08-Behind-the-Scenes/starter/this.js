@@ -1,35 +1,63 @@
 'use strict';
 
-//the this keyword is dynamic its not static
-console.log(this);
+// //the this keyword is dynamic its not static
+// console.log(this);
 
-const calcAge = function (birthYear) {
-  console.log(2037 - birthYear);
-  console.log(this);
-};
-calcAge(2002); //for a regular function call "this" keyword would be undefined in strict mode as we will always use strict mode it will be undefined for most of the cases
+// const calcAge = function (birthYear) {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// };
+// calcAge(2002); //for a regular function call "this" keyword would be undefined in strict mode as we will always use strict mode it will be undefined for most of the cases
 
-const calcAgeArrow = birthYear => {
-  console.log(2037 - birthYear);
-  console.log(this); // it gives window in "this" case as the arrow function doesnt get its own "this" keyword so it uses the lexical "this" keyword of the global scope and the global scopes "this" keywoprd points to window
-};
-calcAgeArrow(2002);
+// const calcAgeArrow = birthYear => {
+//   console.log(2037 - birthYear);
+//   console.log(this); // it gives window in "this" case as the arrow function doesnt get its own "this" keyword so it uses the lexical "this" keyword of the global scope and the global scopes "this" keywoprd points to window
+// };
+// calcAgeArrow(2002);
 
-const rohan = {
-  year: 2002,
-  calcAge: function () {
-    console.log(this);
-    console.log(2037 - this.year);
-  },
-};
-rohan.calcAge();
+// const rohan = {
+//   year: 2002,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2037 - this.year);
+//   },
+// };
+// rohan.calcAge();
 
-const poojitha = {
-  year: 2017,
-};
+// const poojitha = {
+//   year: 2017,
+// };
 
-poojitha.calcAge = rohan.calcAge; //this is called method borrowing
-poojitha.calcAge();
+// poojitha.calcAge = rohan.calcAge; //this is called method borrowing
+// poojitha.calcAge();
 
-const r = rohan.calcAge;
-r();
+// const r = rohan.calcAge;
+// r();
+
+// const rohan = {
+//   firstName: 'rohan',
+//   year: 2002,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2025 - this.year);
+//   },
+
+//   greet: () => console.log(`hey ${this.firstName}`),
+// };
+
+// rohan.greet();
+// console.log(this.firstName);
+
+// const addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addExpr(2, 3);
+// addExpr(2, 4, 8, 6);
+
+// var addArrow = (a, b) => {
+//   console.log(arguments);
+//   return a + b;
+// };
+
+// addArrow(2, 5, 8);
